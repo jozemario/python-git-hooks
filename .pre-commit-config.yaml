@@ -1,16 +1,18 @@
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+  - repo: local
     hooks:
       - id: flake8
         name: flake8
-        entry: flake8
+        entry: flake8 main.py
         language: system
-        types: [python]
-  - repo: local
-    hooks:
+        types: [ python ]
       - id: check-compile
         name: Check Python Compilation
         entry: python check_compile.py
+        language: system
+        types: [python]
+      - id: run-tests
+        name: Run Tests
+        entry: python -m unittest test_main.py
         language: system
         types: [python]

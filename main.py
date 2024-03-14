@@ -1,4 +1,15 @@
-print("Hello, world!")
-x = 1
-y = 2
-print("The sum is:", x + y)
+from flask import Flask
+
+# Create a Flask app
+app = Flask(__name__)
+
+
+# Define a route for the root URL
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+
+# Run the Flask app
+if __name__ == '__main__':
+    app.run()
