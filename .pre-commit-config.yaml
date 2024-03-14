@@ -11,6 +11,11 @@ repos:
         entry: python check_compile.py
         language: system
         types: [python]
+      - id: compile-first
+        name: Check Python Compilation
+        entry: python -m py_compile
+        language: system
+        types: [ python ]
       - id: run-tests
         name: Run Tests
         entry: python -m unittest test_main.py
