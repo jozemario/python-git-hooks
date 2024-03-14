@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: flake8
+        name: flake8
+        entry: flake8
+        language: system
+        types: [python]
+  - repo: local
+    hooks:
+      - id: check-compile
+        name: Check Python Compilation
+        entry: python check_compile.py
+        language: system
+        types: [python]
